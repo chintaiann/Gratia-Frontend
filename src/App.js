@@ -5,8 +5,9 @@ import {useDispatch,useSelector} from 'react-redux'
 import { useEffect } from 'react'
 import { logoutUser , initUser} from './reducers/authReducer'
 import Notification from './components/Notifcation';
-
 import JournalForm from './components/JournalForm';
+
+
 const App = () => {
   const dispatch = useDispatch()
   const user = useSelector(state=>state.user)
@@ -21,8 +22,8 @@ const App = () => {
      {user === null ? 
         <SignIn></SignIn>
       :
-        <div>
-          Logged in {user.username}
+        <div align='center'>
+          Logged in as {user.username}
           <br></br>
           <br></br>
           <button onClick={ () => dispatch(logoutUser())}>Logout</button>
